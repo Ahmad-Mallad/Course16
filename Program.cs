@@ -18,15 +18,42 @@ class clsPerson
 {
     public int Id { get; set; }
 
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     public int Age { get; set; }
 
-    public clsPerson(int Id, string Name,int Age)
+    public clsPerson(int Id, string Name, int Age)
     {
         this.Id = Id;
         this.Name = Name;
         this.Age = Age;
+    }
+
+    public clsPerson()
+    {
+        Console.WriteLine("asdf kj kjdshn jkg haskjgh lajkhg kljdahg lkajgh lkajfh glkjgh ewpoiuh g;jfbhpaeiourhg ;oAUR IH");
+    }
+    static clsPerson()
+    {
+        Console.WriteLine("Static Constructor Called");
+    }
+
+
+
+}
+
+
+class clsAhmad
+{
+    //in this class we have a static constructor and a default constructor. The static constructor is called only once when the class is first loaded into memory, and it is used to initialize any static members of the class. The default constructor is called every time an instance of the class is created, and it is used to initialize any instance members of the class.
+    public clsAhmad()
+    {
+        Console.WriteLine("Default constructor called ");
+    }
+
+    static clsAhmad()
+    {
+        Console.WriteLine("Static constructor called ");
     }
 }
 
@@ -99,7 +126,7 @@ class clsEmployee
 }
 
 
- static class Settings
+static class Settings
 {
     public static int DayNumber
     {
@@ -117,7 +144,7 @@ class clsEmployee
         }
     }
 
-   
+
 
     public static string ProjectPath { get; set; }
 }
@@ -160,10 +187,10 @@ class clsCalculator
 
         if (Number == 0)
         {
-            LastNumber=Number;
+            LastNumber = Number;
             return Result / 1;
         }
-        else 
+        else
         {
             LastNumber = Number;
             Result /= Number;
@@ -172,7 +199,7 @@ class clsCalculator
 
 
 
-        
+
     }
 
     public int Modulus(int Number)
@@ -269,13 +296,14 @@ internal class Program
         Calculator1.Clear();
         Calculator1.PrintResult();
 
-        clsPerson Person1 = new clsPerson(1,"ahmad",40);
+        clsPerson Person1 = new clsPerson(1, "ahmad", 40);
 
         Console.WriteLine("Id : {0}", Person1.Id);
         Console.WriteLine("Name : {0}", Person1.Name);
         Console.WriteLine("Age : {0}", Person1.Age);
 
-       
+        clsAhmad objAhmad = new clsAhmad();
+        Console.ReadLine();
 
 
     }
